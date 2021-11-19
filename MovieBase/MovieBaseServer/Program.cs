@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieBase
+namespace MovieBaseServer
 {
     public class Program
     {

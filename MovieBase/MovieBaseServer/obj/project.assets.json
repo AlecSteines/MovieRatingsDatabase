@@ -1,11 +1,40 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "RestSharp/106.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RestSharp/106.13.0": {
+      "sha512": "vwUdmmtC5vtePeNfBWnFcixBF2KjUeVv3ss4ZFzCIkOf7NB7W/9qX8JNZD9DOrz2yGk4AJW8k9znwgPZhnoiNg==",
+      "type": "package",
+      "path": "restsharp/106.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.13.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "RestSharp >= 106.13.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Student\\.nuget\\packages\\": {}
@@ -13,11 +42,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj",
-      "projectName": "MovieBase",
-      "projectPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj",
+      "projectName": "MovieBaseServer",
+      "projectPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj",
       "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\obj\\",
+      "outputPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +74,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "RestSharp": {
+            "target": "Package",
+            "version": "[106.13.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

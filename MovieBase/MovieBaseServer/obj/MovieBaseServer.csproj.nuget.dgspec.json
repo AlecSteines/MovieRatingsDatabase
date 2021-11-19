@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj": {}
+    "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj": {
+    "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj",
-        "projectName": "MovieBase",
-        "projectPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBase.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj",
+        "projectName": "MovieBaseServer",
+        "projectPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\MovieBaseServer.csproj",
         "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\obj\\",
+        "outputPath": "C:\\Users\\Student\\workspace\\sideprojects\\IMDB\\MovieRatingsDatabase\\MovieBase\\MovieBaseServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.13.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
