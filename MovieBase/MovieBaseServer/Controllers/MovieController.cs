@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MovieBaseServer.Controllers
 {
+    // You may need to delete 'api' from the route
     [Route("api/[controller]")]
     [ApiController]
     public class MovieController : ControllerBase

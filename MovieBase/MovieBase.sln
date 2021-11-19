@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieBaseServer", "MovieBaseServer\MovieBaseServer.csproj", "{C60E82CA-A1F3-480B-AC5A-9C26FE56864F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieBaseClient", "MovieBaseClient\MovieBaseClient.csproj", "{EFDCD1ED-7297-4DAB-967D-9B40C8A85B22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C60E82CA-A1F3-480B-AC5A-9C26FE56864F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C60E82CA-A1F3-480B-AC5A-9C26FE56864F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C60E82CA-A1F3-480B-AC5A-9C26FE56864F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFDCD1ED-7297-4DAB-967D-9B40C8A85B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDCD1ED-7297-4DAB-967D-9B40C8A85B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDCD1ED-7297-4DAB-967D-9B40C8A85B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDCD1ED-7297-4DAB-967D-9B40C8A85B22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
