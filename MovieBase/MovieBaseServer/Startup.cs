@@ -30,7 +30,7 @@ namespace MovieBaseServer
 
             string connectionString = Configuration.GetConnectionString("Project");
 
-            services.AddSingleton<IMovieDao>(m => new MovieDao(connectionString));
+            services.AddTransient<IMovieDao>(m => new MovieDao(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

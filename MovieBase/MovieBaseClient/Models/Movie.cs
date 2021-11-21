@@ -1,10 +1,8 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace MovieBaseServer.Models
+namespace MovieBaseClient.Models
 {
     public class Movie
     {
@@ -19,5 +17,10 @@ namespace MovieBaseServer.Models
         public decimal Rating { get; set; }
 
         public string Director { get; set; }
+
+        public Movie()
+        {
+
+        }
     }
 }
