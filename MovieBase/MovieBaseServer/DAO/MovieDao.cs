@@ -58,8 +58,8 @@ namespace MovieBaseServer.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("SELECT TOP 15 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2 FROM moviebase " +
-                        "where Genre like '%@genre%' order by imdb_rating desc", conn);
-                    cmd.Parameters.AddWithValue("@genre", genre);
+                        "where Genre like @genre order by imdb_rating desc", conn);
+                    cmd.Parameters.AddWithValue("@genre", "%"+genre+"%");
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
