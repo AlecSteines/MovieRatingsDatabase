@@ -25,7 +25,7 @@ namespace MovieBaseServer.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 100 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2 FROM moviebase " +
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 100 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2, star3, star4 FROM moviebase " +
                         "order by imdb_rating desc", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -57,9 +57,43 @@ namespace MovieBaseServer.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 15 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2 FROM moviebase " +
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 15 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2, star3, star4 FROM moviebase " +
                         "where Genre like @genre order by imdb_rating desc", conn);
                     cmd.Parameters.AddWithValue("@genre", "%"+genre+"%");
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        Movie movie = GetMovieFromReader(reader);
+
+                        if (movie != null)
+                        {
+                            movies.Add(movie);
+                        }
+
+                    }
+                }
+                return movies;
+            }
+            catch (SqlException)
+            {
+                throw new Exception();
+            }
+        }
+
+        public List<Movie> GetMoviesByActor(string actor)
+        {
+            List<Movie> movies = new List<Movie>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2, star3, star4 FROM moviebase " +
+                        "where star1 like @actor or star2 like @actor or star3 like @actor or star4 like @actor", conn);
+                    cmd.Parameters.AddWithValue("@actor", "%" + actor + "%");
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -96,7 +130,9 @@ namespace MovieBaseServer.DAO
                     Director = Convert.ToString(reader["director"]),
                     Overview = Convert.ToString(reader["overview"]),
                     StarOne = Convert.ToString(reader["star1"]),
-                    StarTwo = Convert.ToString(reader["star2"])
+                    StarTwo = Convert.ToString(reader["star2"]),
+                    StarThree = Convert.ToString(reader["star3"]),
+                    StarFour = Convert.ToString(reader["star4"])
                 };
 
                 return movie;

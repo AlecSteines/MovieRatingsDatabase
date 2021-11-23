@@ -10,5 +10,6 @@ namespace MovieBaseServer.DAO
     {
         List<Movie> GetTop100Movies();
         List<Movie> GetTop15ByGenre(string genre);
+        List<Movie> GetMoviesByActor(string actor);
     }
 }

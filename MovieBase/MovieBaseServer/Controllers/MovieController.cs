@@ -40,5 +40,15 @@ namespace MovieBaseServer.Controllers
             }
             return StatusCode(503);
         }
+        [HttpGet("{actor}")]
+        public IActionResult GetMoviesByActor(string actor)
+        {
+            List<Movie> moviesByActor = movieDao.GetTop15ByGenre(actor);
+            if (moviesByActor != null)
+            {
+                return Ok(moviesByActor);
+            }
+            return StatusCode(503);
+        }
     }
 }

@@ -25,5 +25,9 @@ namespace MovieBaseServer.Models
         public string StarOne { get; set; }
 
         public string StarTwo { get; set; }
+
+        public string StarThree { get; set; }
+
+        public string StarFour { get; set; }
     }
 }
