@@ -92,7 +92,7 @@ namespace MovieBaseServer.DAO
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("SELECT series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2, star3, star4 FROM moviebase " +
-                        "where star1 like @actor or star2 like @actor or star3 like @actor or star4 like @actor", conn);
+                        "WHERE star1 LIKE @actor OR star2 LIKE @actor OR star3 LIKE @actor OR star4 LIKE @actor ", conn);
                     cmd.Parameters.AddWithValue("@actor", "%" + actor + "%");
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -115,7 +115,39 @@ namespace MovieBaseServer.DAO
                 throw new Exception();
             }
         }
+        public List<Movie> GetMoviesByTitle(string title)
+        {
+            List<Movie> movies = new List<Movie>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
+                    SqlCommand cmd = new SqlCommand("SELECT series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2, star3, star4 FROM moviebase " +
+                        "WHERE series_title LIKE @title", conn);
+                    cmd.Parameters.AddWithValue("@title", "%" + title + "%");
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        Movie movie = GetMovieFromReader(reader);
+
+                        if (movie != null)
+                        {
+                            movies.Add(movie);
+                        }
+
+                    }
+                }
+                return movies;
+            }
+            catch (SqlException)
+            {
+                throw new Exception();
+            }
+        }
         private Movie GetMovieFromReader(SqlDataReader reader)
         {
             try

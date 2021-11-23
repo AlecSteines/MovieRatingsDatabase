@@ -54,7 +54,7 @@ namespace MovieBaseClient
         }
         public List<Movie> GetMoviesByActor(string actor)
         {
-            RestRequest request = new RestRequest(API_URL + "/movie/" + actor);
+            RestRequest request = new RestRequest(API_URL + "/movie/actor/" + actor);
             IRestResponse<List<Movie>> response = client.Get<List<Movie>>(request);
 
             if (response.ResponseStatus != ResponseStatus.Completed)

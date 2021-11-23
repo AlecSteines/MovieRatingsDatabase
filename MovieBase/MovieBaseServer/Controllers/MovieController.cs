@@ -40,13 +40,23 @@ namespace MovieBaseServer.Controllers
             }
             return StatusCode(503);
         }
-        [HttpGet("{actor}")]
+        [HttpGet("actor/{actor}")]
         public IActionResult GetMoviesByActor(string actor)
         {
-            List<Movie> moviesByActor = movieDao.GetTop15ByGenre(actor);
+            List<Movie> moviesByActor = movieDao.GetMoviesByActor(actor);
             if (moviesByActor != null)
             {
                 return Ok(moviesByActor);
+            }
+            return StatusCode(503);
+        }
+        [HttpGet("title/{title}")]
+        public IActionResult GetMoviesByTitle(string title)
+        {
+            List<Movie> moviesByTitle = movieDao.GetMoviesByTitle(title);
+            if (moviesByTitle != null)
+            {
+                return Ok(moviesByTitle);
             }
             return StatusCode(503);
         }

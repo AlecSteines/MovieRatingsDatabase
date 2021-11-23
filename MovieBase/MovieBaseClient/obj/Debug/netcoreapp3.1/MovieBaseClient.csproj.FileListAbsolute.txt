@@ -3,3 +3,14 @@ C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\Movi
 C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.AssemblyInfoInputs.cache
 C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.AssemblyInfo.cs
 C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.csproj.CoreCompileInputs.cache
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.exe
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.deps.json
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.runtimeconfig.json
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.runtimeconfig.dev.json
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.dll
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\MovieBaseClient.pdb
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.csproj.CopyComplete
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.dll
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.pdb
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.genruntimeconfig.cache
