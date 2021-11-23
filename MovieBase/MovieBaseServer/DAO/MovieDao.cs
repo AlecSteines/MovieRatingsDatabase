@@ -16,32 +16,67 @@ namespace MovieBaseServer.DAO
             connectionString = dbConnectionString;
         }
 
-        public Dictionary<string, Movie> GetTop100Movies()
+        public List<Movie> GetTop100Movies()
         {
-            Dictionary<string, Movie> movies = new Dictionary<string, Movie>();
+            List<Movie> movies = new List<Movie>();
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 100 series_title, release_year, runtime, genre, imdb_rating, director FROM moviebase " +
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 100 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2 FROM moviebase " +
                         "order by imdb_rating desc", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while(reader.Read())
                     {
                         Movie movie = GetMovieFromReader(reader);
-
+       
                         if(movie != null)
                         {
-                            movies.Add(movie.Title, movie);
+                            movies.Add(movie);
                         }
+                        
                     }
                 }
                 return movies;
             }
             catch(SqlException)
+            {
+                throw new Exception();
+            }
+        }
+
+        public List<Movie> GetTop15ByGenre(string genre)
+        {
+            List<Movie> movies = new List<Movie>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 15 series_title, released_year, runtime, genre, imdb_rating, overview, director, star1, star2 FROM moviebase " +
+                        "where Genre like '%@genre%' order by imdb_rating desc", conn);
+                    cmd.Parameters.AddWithValue("@genre", genre);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        Movie movie = GetMovieFromReader(reader);
+
+                        if (movie != null)
+                        {
+                            movies.Add(movie);
+                        }
+
+                    }
+                }
+                return movies;
+            }
+            catch (SqlException)
             {
                 throw new Exception();
             }
@@ -54,11 +89,14 @@ namespace MovieBaseServer.DAO
                 Movie movie = new Movie()
                 {
                     Title = Convert.ToString(reader["series_title"]),
-                    ReleaseDate = Convert.ToString(reader["release_year"]),
+                    ReleaseDate = Convert.ToString(reader["released_year"]),
                     Runtime = Convert.ToString(reader["runtime"]),
                     Genre = Convert.ToString(reader["genre"]),
                     Rating = Convert.ToDecimal(reader["imdb_rating"]),
-                    Director = Convert.ToString(reader["director"])
+                    Director = Convert.ToString(reader["director"]),
+                    Overview = Convert.ToString(reader["overview"]),
+                    StarOne = Convert.ToString(reader["star1"]),
+                    StarTwo = Convert.ToString(reader["star2"])
                 };
 
                 return movie;

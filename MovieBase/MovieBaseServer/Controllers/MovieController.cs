@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace MovieBaseServer.Controllers
 {
-    // You may need to delete 'api' from the route
     [Route("[controller]")]
     [ApiController]
     public class MovieController : ControllerBase
@@ -24,10 +23,20 @@ namespace MovieBaseServer.Controllers
         [HttpGet("top/all")]
         public IActionResult GetTop100Movies()
         {
-            Dictionary<string, Movie> topMovieList = movieDao.GetTop100Movies();
+            List<Movie> topMovieList = movieDao.GetTop100Movies();
             if(topMovieList != null)
             {
                 return Ok(topMovieList);
+            }
+            return StatusCode(503);
+        }
+        [HttpGet("top/{genre}")]
+        public IActionResult GetTop15ByGenre(string genre)
+        {
+            List<Movie> topMovieGenreList = movieDao.GetTop15ByGenre(genre);
+            if (topMovieGenreList != null)
+            {
+                return Ok(topMovieGenreList);
             }
             return StatusCode(503);
         }

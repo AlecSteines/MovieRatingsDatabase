@@ -1,0 +1,5 @@
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.csproj.AssemblyReference.cache
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.AssemblyInfoInputs.cache
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.AssemblyInfo.cs
+C:\Users\Student\workspace\sideprojects\IMDB\MovieRatingsDatabase\MovieBase\MovieBaseClient\obj\Debug\netcoreapp3.1\MovieBaseClient.csproj.CoreCompileInputs.cache

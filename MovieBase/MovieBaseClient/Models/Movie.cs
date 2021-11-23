@@ -18,6 +18,12 @@ namespace MovieBaseClient.Models
 
         public string Director { get; set; }
 
+        public string Overview { get; set; }
+
+        public string StarOne { get; set; }
+
+        public string StarTwo { get; set; }
+
         public Movie()
         {
 

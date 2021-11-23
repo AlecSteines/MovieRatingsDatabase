@@ -19,5 +19,11 @@ namespace MovieBaseServer.Models
         public decimal Rating { get; set; }
 
         public string Director { get; set; }
+
+        public string Overview { get; set; }
+
+        public string StarOne { get; set; }
+
+        public string StarTwo { get; set; }
     }
 }

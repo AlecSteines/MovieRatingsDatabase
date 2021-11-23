@@ -8,6 +8,7 @@ namespace MovieBaseServer.DAO
 {
     public interface IMovieDao
     {
-        Dictionary<string, Movie> GetTop100Movies();
+        List<Movie> GetTop100Movies();
+        List<Movie> GetTop15ByGenre(string genre);
     }
 }
