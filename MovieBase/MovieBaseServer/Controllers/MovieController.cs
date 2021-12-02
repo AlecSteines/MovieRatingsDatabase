@@ -43,7 +43,7 @@ namespace MovieBaseServer.Controllers
         [HttpGet("actor/{actor}")]
         public IActionResult GetMoviesByActor(string actor)
         {
-            List<Movie> moviesByActor = movieDao.GetMoviesByActor(actor);
+            List<List<Movie>> moviesByActor = movieDao.GetMoviesByActor(actor);
             if (moviesByActor != null)
             {
                 return Ok(moviesByActor);

@@ -52,9 +52,29 @@ namespace MovieBaseClient
                 return response.Data;
             }
         }
-        public List<Movie> GetMoviesByActor(string actor)
+        public List<List<Movie>> GetMoviesByActor(string actor)
         {
             RestRequest request = new RestRequest(API_URL + "/movie/actor/" + actor);
+            IRestResponse<List<List<Movie>>> response = client.Get<List<List<Movie>>>(request);
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Server side error has occured. Server response not complete");
+                return null;
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("An error response was received from the server. Status Code: " + (int)response.StatusCode);
+                return null;
+            }
+            else
+            {
+                return response.Data;
+            }
+        }
+        public List<Movie> GetMoviesByTitle(string title)
+        {
+            RestRequest request = new RestRequest(API_URL + "/movie/title/" + title);
             IRestResponse<List<Movie>> response = client.Get<List<Movie>>(request);
 
             if (response.ResponseStatus != ResponseStatus.Completed)
