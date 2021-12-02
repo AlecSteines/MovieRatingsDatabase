@@ -7,6 +7,7 @@ namespace MovieBaseClient
 {
     class ViewHelpers
     {
+        //Iterates through list of movies and lists them for the user to select
         public Dictionary<int, Movie> MovieView(List<Movie> movies)
         {
             Console.WriteLine();
